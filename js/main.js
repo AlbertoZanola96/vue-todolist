@@ -5,15 +5,15 @@ var app = new Vue ({
         newToDo: '',
         toDos: [
             {
-                do: 'fare i compiti',
+                do: 'Fare i compiti',
                 checked: false,
             },
             {
-                do: 'fare la spesa',
-                checked: true,
+                do: 'Fare la spesa',
+                checked: false,
             },
             {
-                do: 'fare il bucato',
+                do: 'Fare il bucato',
                 checked: false,
             },
         ],
@@ -21,7 +21,10 @@ var app = new Vue ({
     methods: {
         addToDo() {
             if(this.newToDo != '') {
-                this.toDos.push(this.newToDo);
+                this.toDos.push({
+                        do: this.newToDo,
+                        checked: false,
+                    });
                 this.newToDo = "";
             }
         },
